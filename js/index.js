@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br>Is<br>Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -39,7 +39,7 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 //all nar content appears 
 let nar = document.getElementsByTagName("a");
@@ -52,15 +52,17 @@ nar[5].textContent = siteContent.nav['nav-item-6'];
 
 //top content cta
 let ctaHeader = document.querySelector("h1");
-ctaHeader.textContent = siteContent.cta.h1;
+ctaHeader.innerHTML = siteContent.cta.h1;
+
 // button appear get started
 let ctaButton = document.querySelector("button"); 
 ctaButton.textContent = siteContent.cta.button;
+
 //image appear
-let ctaImage = document.querySelector("img-src"); 
-ctaImage.textContent = siteContent.cta['img-src']; 
+let ctaImage = document.querySelector("#cta-img"); 
+ctaImage.setAttribute('src', siteContent.cta['img-src']);  
 
 //body content
-let mainContentFeatures = document.querySelector("features-h4"); 
+let mainContentFeatures = document.querySelector(".top-content .text-content h4"); 
 mainContentFeatures.textContent = siteContent['main-content']['features-h4']; 
 
